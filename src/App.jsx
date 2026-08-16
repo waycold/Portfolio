@@ -6,10 +6,9 @@ import Stack from './components/Stack';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
 function App() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-charcoal-950 text-white flex flex-col antialiased selection:bg-azure-600 selection:text-white">
       <Navbar />
       
       <main className="flex-grow">

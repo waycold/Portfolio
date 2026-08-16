@@ -1,30 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  /* Core Colors */
-  --color-charcoal-800: #1e2124;
-  --color-charcoal-900: #141618;
-  --color-charcoal-950: #0a0b0c;
+  /* Core Slate & Neutral Colors */
+  --color-charcoal-950: #0a0d12;
+  --color-charcoal-900: #10141d;
+  --color-charcoal-850: #161c28;
+  --color-charcoal-800: #1e2637;
+  --color-charcoal-700: #2d374d;
+  --color-charcoal-600: #475569;
+  --color-charcoal-500: #64748b;
+  --color-charcoal-400: #94a3b8;
+  --color-charcoal-300: #cbd5e1;
+  --color-charcoal-200: #e2e8f0;
+  --color-charcoal-100: #f1f5f9;
+  --color-charcoal-50: #f8fafc;
 
+  /* Azure & Blue Brand Accent */
+  --color-azure-300: #93c5fd;
   --color-azure-400: #60a5fa;
   --color-azure-500: #3b82f6;
   --color-azure-600: #2563eb;
-  
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #94a3b8;
-  --color-slate-50: #f8fafc;
+  --color-azure-700: #1d4ed8;
 
-  /* Semantic Theme Variables */
-  --color-bg-primary: var(--color-charcoal-950);
-  --color-bg-surface: var(--color-charcoal-900);
-  --color-border-color: #2e3338;
+  /* Semantic Variables */
+  --color-bg-primary: #090c10;
+  --color-bg-surface: #0f131a;
+  --color-bg-card: #151a24;
+  --color-bg-card-hover: #1a2230;
+  --color-border-color: #232c3d;
+  --color-border-subtle: #19202c;
   
-  --color-text-primary: var(--color-slate-50);
-  --color-text-secondary: var(--color-slate-300);
-  --color-text-muted: var(--color-slate-400);
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #8b9bb4;
 
-  --color-brand-primary: var(--color-azure-500);
-  --color-brand-accent: var(--color-azure-400);
+  --color-brand-primary: #3b82f6;
+  --color-brand-accent: #60a5fa;
   
   --color-status-error: #ef4444;
   --color-status-success: #10b981;
@@ -34,40 +45,48 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
   
   body {
-    @apply bg-bg-primary text-text-primary antialiased selection:bg-brand-primary selection:text-white;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: #2563eb;
+    color: #ffffff;
   }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-5xl mx-auto px-6 py-20 md:py-32;
+    @apply max-w-6xl mx-auto px-6 py-16 md:py-24;
   }
   
   .heading-lg {
-    @apply text-4xl md:text-6xl font-bold tracking-tight text-text-primary mb-6;
+    @apply text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6;
   }
   
   .heading-md {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight text-text-primary mb-8 md:mb-12;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-6 md:mb-10;
   }
 
   .text-body {
-    @apply text-lg text-text-secondary leading-relaxed;
+    @apply text-base md:text-lg text-charcoal-300 leading-relaxed;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-md bg-brand-primary text-white font-medium hover:bg-azure-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:ring-offset-bg-primary;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-azure-600 text-white font-medium shadow-md shadow-azure-600/20 hover:bg-azure-500 hover:shadow-lg hover:shadow-azure-500/30 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-md bg-transparent text-text-primary font-medium border border-border-color hover:bg-bg-surface hover:text-brand-accent hover:border-brand-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:ring-offset-bg-primary;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-charcoal-850/80 text-white font-medium border border-border-color hover:bg-charcoal-800 hover:border-azure-500/60 hover:text-azure-300 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
   }
 
   .tag-item {
-    @apply px-3 py-1.5 bg-bg-surface text-brand-accent text-sm font-medium rounded-md border border-border-color shadow-sm;
+    @apply px-3 py-1 bg-charcoal-850 text-azure-400 text-xs sm:text-sm font-medium rounded-md border border-border-color shadow-sm;
   }
 }
