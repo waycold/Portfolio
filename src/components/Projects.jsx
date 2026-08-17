@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { cvData } from '../data/content';
 
-const ProjectImageCarousel = ({ images, title }) => {
+const ProjectImageCarousel = ({ images = [], title = '' }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   // Reset image index whenever project changes
@@ -13,36 +13,41 @@ const ProjectImageCarousel = ({ images, title }) => {
 
   const nextImg = (e) => {
     e?.stopPropagation();
-    setCurrentImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentImgIndex((prev) => (prev >= images.length - 1 ? 0 : prev + 1));
   };
 
   const prevImg = (e) => {
     e?.stopPropagation();
-    setCurrentImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentImgIndex((prev) => (prev <= 0 ? images.length - 1 : prev - 1));
   };
 
-  // Helper to extract url and title for each image item
+  // Helper to extract url and title for each image item safely
   const getImageData = (imgItem) => {
+    if (!imgItem) {
+      return { url: '', title: null };
+    }
     if (typeof imgItem === 'string') {
       return { url: imgItem, title: null };
     }
     return {
-      url: imgItem.url,
+      url: imgItem.url || '',
       title: imgItem.title || imgItem.caption || null
     };
   };
 
-  const currentImgData = getImageData(images[currentImgIndex]);
+  const safeIndex = Math.min(Math.max(0, currentImgIndex), images.length - 1);
+  const currentImgData = getImageData(images[safeIndex]);
 
   return (
     <div className="relative w-full h-[48vh] sm:h-[54vh] md:h-[58vh] lg:h-[62vh] max-h-[70vh] bg-[#06080d] overflow-hidden group flex items-center justify-center select-none">
       {/* Slider Container */}
       <div 
         className="w-full h-full flex transition-transform duration-500 ease-out"
-        style={{ transform: `translateX(-${currentImgIndex * 100}%)` }}
+        style={{ transform: `translateX(-${safeIndex * 100}%)` }}
       >
         {images.map((imgItem, idx) => {
           const { url, title: itemTitle } = getImageData(imgItem);
+          if (!url) return null;
           return (
             <div 
               key={idx} 
@@ -60,7 +65,7 @@ const ProjectImageCarousel = ({ images, title }) => {
       </div>
 
       {/* Espacio para el Titular de cada imagen */}
-      {currentImgData.title && (
+      {currentImgData?.title && (
         <div className="absolute top-[2vh] left-[2vw] max-w-[70vw] px-3.5 py-1.5 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs sm:text-sm font-medium text-slate-200 z-10 flex items-center gap-2 shadow-lg animate-in fade-in duration-300">
           <span className="w-2 h-2 rounded-full bg-azure-400 shrink-0"></span>
           <span className="truncate">{currentImgData.title}</span>
@@ -70,7 +75,7 @@ const ProjectImageCarousel = ({ images, title }) => {
       {/* Floating Image Counter Badge */}
       {images.length > 1 && (
         <div className="absolute top-[2vh] right-[2vw] px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-slate-200 z-10 shadow-lg">
-          {currentImgIndex + 1} / {images.length}
+          {safeIndex + 1} / {images.length}
         </div>
       )}
 
@@ -109,7 +114,7 @@ const ProjectImageCarousel = ({ images, title }) => {
                 setCurrentImgIndex(idx);
               }}
               className={`transition-all duration-300 rounded cursor-pointer ${
-                idx === currentImgIndex
+                idx === safeIndex
                   ? 'w-6 h-2 bg-azure-400 shadow-sm shadow-azure-400/50'
                   : 'w-2 h-2 bg-slate-500 hover:bg-slate-300'
               }`}
@@ -196,6 +201,7 @@ const Projects = () => {
               />
             ) : (
               <ProjectImageCarousel 
+                key={currentProject.id}
                 images={currentProject.images} 
                 title={currentProject.title} 
               />
