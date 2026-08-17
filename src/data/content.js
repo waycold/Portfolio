@@ -32,29 +32,11 @@ export const cvData = {
   projects: [
     {
       id: 1,
-      title: "Comprehensive Sales Analysis",
-      description: "Commercial sales data analysis project. Includes data cleaning, structuring, and visualization through interactive dashboards to uncover market trends and key metrics.",
-      tech: ["Python", "Pandas", "SQL", "Power BI"],
-      liveUrl: "#", // Replace if you publish a dashboard online (e.g., NovyPro)
-      repoUrl: "https://github.com/waycold/",
-      images: [
-        {
-          url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-          title: "Sales Performance & Revenue Overview"
-        },
-        {
-          url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-          title: "Conversion Trends & Market Metrics"
-        }
-      ]
-    },
-    {
-      id: 2,
       title: "E-Commerce Django, Data Simulation & Analytics",
       description: "Backend platform developed in Django that integrates transactional data simulation to generate analytical metrics for users and purchases.",
       tech: ["Python", "Django", "PostgreSQL"],
       liveUrl: "https://ecommerce-django-fd4t.onrender.com/",
-      repoUrl: "https://github.com/waycold/ecommerce", 
+      repoUrl: "https://github.com/waycold/ecommerce_Django", 
       images: [
         {
           url: "https://i.imgur.com/AUYNzwq.png",
@@ -65,31 +47,17 @@ export const cvData = {
           title: "User Behavior & Transaction Analysis"
         },
         {
-          url: "https://i.imgur.com/WzXV5YG.png",
-          title: "Database Pipeline & Event Stream"
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Automated Web Scraping Engine",
-      description: "Scalable web scraping solution designed to extract large volumes of data from various sources. Built with anti-bot bypassing and automated pipeline exporting.",
-      tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
-      liveUrl: "#",
-      repoUrl: "https://github.com/waycold/", 
-      images: [
-        {
-          url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
-          title: "Extraction Pipeline Architecture"
+          url: "https://i.imgur.com/gMSxVSM.png",
+          title: "Ecommerce homepage & Product Catalog"
         },
         {
-          url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-          title: "Automated Export & Logging Interface"
+          url: "https://i.imgur.com/2cP7rE8.png",
+          title: "Shopping Cart & Checkout Process"
         }
       ]
     },
     {
-      id: 4,
+      id: 2,
       title: "Business Dashboard in PowerBI",
       description: "Power BI report with interactive data visualizations for tracking key performance indicators and revenue growth.",
       tech: ["Power BI", "DAX", "SQL"],
@@ -111,21 +79,22 @@ export const cvData = {
       ]
     },
     {
-      id: 5,
-      title: "Financial Dashboard PowerBI",
-      description: "External Power BI report link focusing on financial forecasting and risk management models.",
-      tech: ["Power BI", "Data Modeling"],
-      liveUrl: "https://app.powerbi.com/reportEmbed?reportId=7bf26a0b-0785-4522-a42f-b4487211c815&autoAuth=true&ctid=659e1dba-b3cc-4dcc-8730-d23877e7ab7b",
+      id: 3,
+      title: "Chatbot for Financial Forecasting & Risk Management",
+      status: "In Progress",
+      description: "Interactive chatbot designed to assist in financial forecasting and risk management. Utilizes predictive analytics to provide insights and recommendations.",
+      tech: ["Python", "Machine Learning", "NLP", "Power BI"],
+      liveUrl: "#",
       repoUrl: "#", 
       images: [
         {
-          url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-          title: "Financial Risk & Forecast Modeling"
+          url: "https://images.unsplash.com/photo-1659018966820-de07c94e0d01?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Chatbot Interface & User Interaction"
         }
       ]
     },
     {
-      id: 6,
+      id: 4,
       title: "IoT Analytics with ESP32",
       description: "Hardware automation and data collection project using ESP32 microcontrollers. Simulates data streams that are captured and analyzed in real-time.",
       tech: ["MicroPython", "ESP32", "IoT", "Data Collection"],
@@ -145,6 +114,25 @@ export const cvData = {
           title: "Sensor Output Analysis & Metrics"
         }
       ]
-    }
+    },
+    {
+      id: 5,
+      title: "Automated Web Scraping Engine",
+      status: "In Progress",
+      description: "Scalable web scraping solution designed to extract large volumes of data from various sources. Built with anti-bot bypassing and automated pipeline exporting.",
+      tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
+      liveUrl: "#",
+      repoUrl: "https://github.com/waycold/", 
+      images: [
+        {
+          url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+          title: "Extraction Pipeline Architecture"
+        },
+        {
+          url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+          title: "Automated Export & Logging Interface"
+        }
+      ]
+    },
   ]
 };

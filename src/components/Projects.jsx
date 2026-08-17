@@ -66,7 +66,7 @@ const ProjectImageCarousel = ({ images = [], title = '' }) => {
 
       {/* Espacio para el Titular de cada imagen */}
       {currentImgData?.title && (
-        <div className="absolute top-[2vh] left-[2vw] max-w-[70vw] px-3.5 py-1.5 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs sm:text-sm font-medium text-slate-200 z-10 flex items-center gap-2 shadow-lg animate-in fade-in duration-300">
+        <div className="absolute top-[2vh] left-[2vw] max-w-[70vw] px-3.5 py-1.5 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs sm:text-sm font-medium text-slate-200 z-10 flex items-center gap-2 shadow-lg opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
           <span className="w-2 h-2 rounded-full bg-azure-400 shrink-0"></span>
           <span className="truncate">{currentImgData.title}</span>
         </div>
@@ -74,7 +74,7 @@ const ProjectImageCarousel = ({ images = [], title = '' }) => {
 
       {/* Floating Image Counter Badge */}
       {images.length > 1 && (
-        <div className="absolute top-[2vh] right-[2vw] px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-slate-200 z-10 shadow-lg">
+        <div className="absolute top-[2vh] right-[2vw] px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-slate-200 z-10 shadow-lg opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
           {safeIndex + 1} / {images.length}
         </div>
       )}
@@ -105,7 +105,7 @@ const ProjectImageCarousel = ({ images = [], title = '' }) => {
 
       {/* Puntos de paginación interactivos (Control exclusivo) */}
       {images.length > 1 && (
-        <div className="absolute bottom-[2vh] left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 rounded-md bg-black/75 backdrop-blur-md border border-white/10 z-10 shadow-xl">
+        <div className="absolute bottom-[2vh] left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 rounded-md bg-black/75 backdrop-blur-md border border-white/10 z-10 shadow-xl opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
           {images.map((_, idx) => (
             <button
               key={idx}
@@ -149,12 +149,9 @@ const Projects = () => {
         
         {/* Header with Title & Project Controls */}
         <div className="flex items-end justify-between mb-[2vh] gap-4">
-          <div>
-            <span className="text-xs font-bold tracking-widest text-azure-400 uppercase">Portfolio Showcase</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-1">
               Featured Projects
             </h2>
-          </div>
 
           {/* Project Progress & Arrow Controls */}
           <div className="flex items-center gap-3 sm:gap-4">
@@ -212,11 +209,17 @@ const Projects = () => {
           <div className="p-[1.8vw] md:p-[2vw] flex flex-col md:flex-row md:items-center justify-between gap-[1.5vw] bg-charcoal-850">
             {/* Title & Description */}
             <div className="max-w-[55vw]">
-              <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                 <span className="w-2 h-2 rounded-full bg-azure-400"></span>
                 <span className="text-xs font-semibold uppercase tracking-wider text-charcoal-400">
                   Project {currentProjectIdx + 1}
                 </span>
+                {currentProject.status && (
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-300 ml-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    {currentProject.status}
+                  </span>
+                )}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 leading-tight">
                 {currentProject.title}
