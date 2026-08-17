@@ -46,12 +46,12 @@ const ProjectImageCarousel = ({ images, title }) => {
           return (
             <div 
               key={idx} 
-              className="w-full h-full shrink-0 flex items-center justify-center p-[2vw] bg-[#07090e]"
+              className="w-full h-full shrink-0 flex items-center justify-center p-0 sm:p-1.5 bg-[#06080d]"
             >
               <img 
                 src={url} 
                 alt={itemTitle || `${title} snapshot ${idx + 1}`}
-                className="w-full h-full object-contain rounded-md shadow-xl max-h-full"
+                className="w-full h-full object-contain shadow-2xl max-h-full"
                 loading="lazy"
               />
             </div>
@@ -264,22 +264,6 @@ const Projects = () => {
             </div>
           </div>
 
-        </div>
-
-        {/* Project Selector Indicator Dots */}
-        <div className="flex items-center justify-center gap-2 mt-[2vh]">
-          {projects.map((proj, idx) => (
-            <button
-              key={proj.id}
-              onClick={() => setCurrentProjectIdx(idx)}
-              className={`transition-all duration-300 rounded cursor-pointer ${
-                idx === currentProjectIdx
-                  ? 'w-7 h-2 bg-azure-500 shadow-sm shadow-azure-500/50'
-                  : 'w-2 h-2 bg-charcoal-700 hover:bg-charcoal-500'
-              }`}
-              aria-label={`Go to project ${idx + 1}: ${proj.title}`}
-            />
-          ))}
         </div>
 
       </div>

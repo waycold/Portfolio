@@ -16,6 +16,11 @@ export const cvData = {
       "As an Informatics Engineering student at Universidad Nacional de La Matanza (UNLaM), I apply a solid analytical foundation to problem-solving. My focus is on bridging the gap between raw data and strategic decision-making.",
       "I have experience managing databases and developing automation solutions. I use tools like Python, Pandas, SQL, and Power BI to structure, clean, and visualize information in a clear and actionable way.",
       "Currently, I am developing business-applied analytical projects and seeking new professional opportunities as a Data Analyst. I am detail-oriented and constantly refining my technical and communication skills."
+    ],
+    details: [
+      { label: "Education", value: "Informatics Engineering, UNLaM" },
+      { label: "Specialization", value: "Data Analysis, Automation & BI" },
+      { label: "Location", value: "Buenos Aires, Argentina" },
     ]
   },
   stack: [

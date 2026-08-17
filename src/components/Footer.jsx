@@ -25,13 +25,13 @@ const Footer = () => {
         </div>
         
         {/* Right: Social Links & Back to top */}
-        <div className="flex items-center gap-4">
-          <div className="flex gap-3">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <a 
               href={cvData.personalInfo.github} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-8 h-8 rounded-md bg-charcoal-900 border border-border-color text-charcoal-300 hover:text-white hover:border-azure-500/60 hover:bg-charcoal-850 flex items-center justify-center transition-all shadow-sm"
+              className="w-8 h-8 text-charcoal-400 hover:text-white flex items-center justify-center transition-colors rounded hover:bg-charcoal-900"
               aria-label="GitHub Profile"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -42,7 +42,7 @@ const Footer = () => {
               href={cvData.personalInfo.linkedin} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-8 h-8 rounded-md bg-charcoal-900 border border-border-color text-charcoal-300 hover:text-azure-400 hover:border-azure-500/60 hover:bg-charcoal-850 flex items-center justify-center transition-all shadow-sm"
+              className="w-8 h-8 text-charcoal-400 hover:text-azure-400 flex items-center justify-center transition-colors rounded hover:bg-charcoal-900"
               aria-label="LinkedIn Profile"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -53,7 +53,7 @@ const Footer = () => {
 
           <button
             onClick={scrollToTop}
-            className="w-8 h-8 rounded-md bg-charcoal-900 border border-border-color text-charcoal-400 hover:text-white hover:border-azure-500/60 hover:bg-charcoal-850 flex items-center justify-center transition-all cursor-pointer shadow-sm"
+            className="w-8 h-8 text-charcoal-400 hover:text-white flex items-center justify-center transition-colors rounded hover:bg-charcoal-900 cursor-pointer"
             aria-label="Scroll to top"
             title="Back to top"
           >
