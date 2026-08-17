@@ -38,12 +38,12 @@ const Navbar = () => {
         </a>
         
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1 bg-charcoal-850/80 px-4 py-1.5 rounded-full border border-border-color/80 shadow-inner">
+        <div className="hidden md:flex items-center gap-1 bg-charcoal-850/80 px-3 py-1 rounded-md border border-border-color/80 shadow-inner">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:bg-charcoal-800/80 px-3.5 py-1.5 rounded-full transition-all duration-200"
+              className="text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:bg-charcoal-800/80 px-3 py-1.5 rounded transition-all duration-200"
             >
               {link.name}
             </a>
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a 
             href="#contact" 
-            className="text-xs font-semibold px-4 py-2 rounded-lg bg-azure-600 hover:bg-azure-500 text-white transition-all shadow-sm shadow-azure-600/30"
+            className="text-xs font-semibold px-3.5 py-2 rounded-md bg-azure-600 hover:bg-azure-500 text-white transition-all shadow-sm shadow-azure-600/30"
           >
             Get in touch
           </a>
@@ -63,7 +63,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg bg-charcoal-850 border border-border-color text-slate-300 hover:text-white focus:outline-none"
+          className="md:hidden p-2 rounded-md bg-charcoal-850 border border-border-color text-slate-300 hover:text-white focus:outline-none"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? (
@@ -86,7 +86,7 @@ const Navbar = () => {
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-azure-400 hover:bg-charcoal-850 px-3 py-2 rounded-lg transition-colors"
+              className="block text-sm font-medium text-slate-200 hover:text-azure-400 hover:bg-charcoal-850 px-3 py-2 rounded-md transition-colors"
             >
               {link.name}
             </a>
@@ -95,7 +95,7 @@ const Navbar = () => {
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center text-xs font-semibold px-4 py-2.5 rounded-lg bg-azure-600 hover:bg-azure-500 text-white transition-all"
+              className="block text-center text-xs font-semibold px-4 py-2.5 rounded-md bg-azure-600 hover:bg-azure-500 text-white transition-all"
             >
               Get in touch
             </a>

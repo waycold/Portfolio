@@ -8,7 +8,7 @@ const Hero = () => {
     <section id="home" className="section-container min-h-[90vh] sm:min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 relative">
       <div className="max-w-3xl">
         {/* Status Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-charcoal-850 border border-border-color shadow-sm mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-charcoal-850 border border-border-color shadow-sm mb-6">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="text-xs font-semibold tracking-wider text-azure-300 uppercase">
             {personalInfo.title}

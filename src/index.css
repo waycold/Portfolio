@@ -79,14 +79,14 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-azure-600 text-white font-medium shadow-md shadow-azure-600/20 hover:bg-azure-500 hover:shadow-lg hover:shadow-azure-500/30 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-azure-600 text-white font-medium shadow-md shadow-azure-600/20 hover:bg-azure-500 hover:shadow-lg hover:shadow-azure-500/30 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-charcoal-850/80 text-white font-medium border border-border-color hover:bg-charcoal-800 hover:border-azure-500/60 hover:text-azure-300 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-charcoal-850/80 text-white font-medium border border-border-color hover:bg-charcoal-800 hover:border-azure-500/60 hover:text-azure-300 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
   }
 
   .tag-item {
-    @apply px-3 py-1 bg-charcoal-850 text-azure-400 text-xs sm:text-sm font-medium rounded-md border border-border-color shadow-sm;
+    @apply px-2.5 py-0.5 bg-charcoal-850 text-azure-400 text-xs sm:text-sm font-medium rounded border border-border-color shadow-sm;
   }
 }

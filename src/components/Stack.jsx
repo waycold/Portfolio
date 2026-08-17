@@ -13,11 +13,11 @@ const Stack = () => {
         {cvData.stack.map((group, index) => (
           <div 
             key={index} 
-            className="flex flex-col p-6 bg-charcoal-850 border border-border-color rounded-xl hover:border-azure-500/40 transition-all duration-300 shadow-md shadow-black/20"
+            className="flex flex-col p-5 bg-charcoal-850 border border-border-color rounded-md hover:border-azure-500/40 transition-all duration-300 shadow-md shadow-black/20"
           >
             <h3 className="text-xs font-bold tracking-widest text-azure-300 uppercase mb-4 pb-2 border-b border-border-color flex items-center justify-between">
               <span>{group.category}</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-charcoal-900 text-charcoal-400 font-mono">
+              <span className="text-[10px] px-1.5 py-0.5 rounded-sm bg-charcoal-900 text-charcoal-400 font-mono">
                 {group.technologies.length}
               </span>
             </h3>
@@ -26,7 +26,7 @@ const Stack = () => {
               {group.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex} 
-                  className="px-2.5 py-1 bg-charcoal-900 text-slate-200 text-xs sm:text-sm font-medium rounded-md border border-border-color hover:border-azure-400/50 hover:text-white transition-all cursor-default"
+                  className="px-2.5 py-1 bg-charcoal-900 text-slate-200 text-xs sm:text-sm font-medium rounded border border-border-color hover:border-azure-400/50 hover:text-white transition-all cursor-default"
                 >
                   {tech}
                 </span>

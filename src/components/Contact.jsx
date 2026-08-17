@@ -4,7 +4,7 @@ import { cvData } from '../data/content';
 const Contact = () => {
   return (
     <section id="contact" className="section-container py-20 md:py-28">
-      <div className="max-w-3xl mx-auto text-center bg-charcoal-850 border border-border-color rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/30">
+      <div className="max-w-3xl mx-auto text-center bg-charcoal-850 border border-border-color rounded-lg p-8 sm:p-12 shadow-xl shadow-black/30">
         <span className="text-xs font-bold tracking-widest text-azure-400 uppercase">Get In Touch</span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-4">
           Let's Work Together

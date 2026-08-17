@@ -21,9 +21,9 @@ const About = () => {
           </div>
           
           {/* Visual Highlight Card */}
-          <div className="lg:col-span-5 bg-charcoal-850 border border-border-color rounded-2xl p-6 sm:p-8 shadow-xl shadow-black/30 space-y-6">
-            <div className="flex items-center gap-4 pb-6 border-b border-border-color">
-              <div className="w-12 h-12 rounded-xl bg-azure-600/20 border border-azure-500/40 flex items-center justify-center text-azure-400 font-bold text-xl">
+          <div className="lg:col-span-5 bg-charcoal-850 border border-border-color rounded-lg p-6 sm:p-7 shadow-xl shadow-black/30 space-y-6">
+            <div className="flex items-center gap-4 pb-5 border-b border-border-color">
+              <div className="w-11 h-11 rounded-md bg-azure-600/20 border border-azure-500/40 flex items-center justify-center text-azure-400 font-bold text-lg">
                 FR
               </div>
               <div>
@@ -32,13 +32,13 @@ const About = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-charcoal-900 border border-border-color/80">
-                <span className="block text-2xl font-black text-azure-400">UNLaM</span>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-3.5 rounded-md bg-charcoal-900 border border-border-color/80">
+                <span className="block text-xl font-black text-azure-400">UNLaM</span>
                 <span className="text-xs text-charcoal-400 font-medium">Informatics Eng.</span>
               </div>
-              <div className="p-4 rounded-xl bg-charcoal-900 border border-border-color/80">
-                <span className="block text-2xl font-black text-emerald-400">100%</span>
+              <div className="p-3.5 rounded-md bg-charcoal-900 border border-border-color/80">
+                <span className="block text-xl font-black text-emerald-400">100%</span>
                 <span className="text-xs text-charcoal-400 font-medium">Focus & Delivery</span>
               </div>
             </div>
@@ -48,24 +48,24 @@ const About = () => {
                 <span className="font-semibold text-slate-200">Data Analytics & Modeling</span>
                 <span className="text-azure-400 font-mono">SQL / Python</span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-charcoal-900 overflow-hidden">
-                <div className="h-full bg-azure-500 rounded-full" style={{ width: '92%' }}></div>
+              <div className="w-full h-1.5 rounded-sm bg-charcoal-900 overflow-hidden">
+                <div className="h-full bg-azure-500 rounded-sm" style={{ width: '92%' }}></div>
               </div>
 
               <div className="flex items-center justify-between text-xs text-charcoal-300 pt-2">
                 <span className="font-semibold text-slate-200">Process Automation</span>
                 <span className="text-azure-400 font-mono">ETL / Pipelines</span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-charcoal-900 overflow-hidden">
-                <div className="h-full bg-azure-400 rounded-full" style={{ width: '88%' }}></div>
+              <div className="w-full h-1.5 rounded-sm bg-charcoal-900 overflow-hidden">
+                <div className="h-full bg-azure-500 rounded-sm" style={{ width: '88%' }}></div>
               </div>
 
               <div className="flex items-center justify-between text-xs text-charcoal-300 pt-2">
                 <span className="font-semibold text-slate-200">BI & Dashboards</span>
                 <span className="text-azure-400 font-mono">Power BI / DAX</span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-charcoal-900 overflow-hidden">
-                <div className="h-full bg-azure-500 rounded-full" style={{ width: '90%' }}></div>
+              <div className="w-full h-1.5 rounded-sm bg-charcoal-900 overflow-hidden">
+                <div className="h-full bg-azure-500 rounded-sm" style={{ width: '90%' }}></div>
               </div>
             </div>
           </div>
