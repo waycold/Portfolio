@@ -85,8 +85,12 @@ export const cvData = {
       description: "Interactive chatbot designed to assist in financial forecasting and risk management. Utilizes predictive analytics to provide insights and recommendations.",
       tech: ["Python", "Machine Learning", "NLP", "Power BI"],
       liveUrl: "#",
-      repoUrl: "#", 
+      repoUrl: "https://github.com/waycold/Chatbot-Engine-Gateway", 
       images: [
+        {
+          url: "https://i.imgur.com/sweKfrf.png",
+          title: "Ecommerce agent with bussiness context"
+        },
         {
           url: "https://images.unsplash.com/photo-1659018966820-de07c94e0d01?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           title: "Chatbot Interface & User Interaction"
