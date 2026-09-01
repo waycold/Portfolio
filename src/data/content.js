@@ -9,13 +9,12 @@ export const cvData = {
   },
   hero: {
     headline: "Transforming complex data into strategic decisions.",
-    description: "Informatics Engineering student focused on data analysis and automation. Specialized in extracting value from information and optimizing processes through efficient code.",
+    description: "Informatics Engineering student specializing in data pipelines, SQL analytics, and automated business intelligence.",
   },
   about: {
     bio: [
-      "As an Informatics Engineering student at Universidad Nacional de La Matanza (UNLaM), I apply a solid analytical foundation to problem-solving. My focus is on bridging the gap between raw data and strategic decision-making.",
-      "I have experience managing databases and developing automation solutions. I use tools like Python, Pandas, SQL, and Power BI to structure, clean, and visualize information in a clear and actionable way.",
-      "Currently, I am developing business-applied analytical projects and seeking new professional opportunities as a Data Analyst. I am detail-oriented and constantly refining my technical and communication skills."
+      "Informatics Engineering student at Universidad Nacional de La Matanza (UNLaM) with a focus on data analytics and process automation. I design relational database schemas, build automated ETL pipelines in Python and SQL, and develop interactive Power BI dashboards for executive decision-making.",
+      "Experienced in transforming raw transactional data into clear, actionable business insights. Seeking Data Analyst and Automation Engineering opportunities to optimize data workflows and drive measurable impact."
     ],
     details: [
       { label: "Education", value: "Informatics Engineering, UNLaM" },
@@ -34,6 +33,7 @@ export const cvData = {
       id: 1,
       title: "E-Commerce Django, Data Simulation & Analytics",
       description: "Backend platform developed in Django that integrates transactional data simulation to generate analytical metrics for users and purchases.",
+      highlights: ["10K+ Simulated Transactions", "Real-time Metrics Pipeline", "PostgreSQL Relational Schema"],
       tech: ["Python", "Django", "PostgreSQL"],
       liveUrl: "https://ecommerce-django-fd4t.onrender.com/",
       repoUrl: "https://github.com/waycold/ecommerce_Django", 
@@ -60,9 +60,10 @@ export const cvData = {
       id: 2,
       title: "Business Dashboard in PowerBI",
       description: "Power BI report with interactive data visualizations for tracking key performance indicators and revenue growth.",
+      highlights: ["Multi-dimensional DAX Models", "Executive KPI Tracking", "Automated Trend Forecasting"],
       tech: ["Power BI", "DAX", "SQL"],
       liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiOGRmNDViMzktNDUyMi00ZmQzLThmYTEtMWNiMmZiYzQzZjMwIiwidCI6IjI0ODRhMTEyLTFlZTUtNGJhNi05MGQ1LTdmZWExMGJmZjUyYSJ9",
-      repoUrl: "#", 
+      repoUrl: null, 
       images: [
         {
           url: "https://i.imgur.com/B7j6xnE.png",
@@ -83,8 +84,9 @@ export const cvData = {
       title: "Chatbot for Financial Forecasting & Risk Management",
       status: "In Progress",
       description: "Interactive chatbot designed to assist in financial forecasting and risk management. Utilizes predictive analytics to provide insights and recommendations.",
+      highlights: ["Predictive Analytics Engine", "NLP Business Contextualization", "Automated Risk Signals"],
       tech: ["Python", "Machine Learning", "NLP", "Power BI"],
-      liveUrl: "#",
+      liveUrl: null,
       repoUrl: "https://github.com/waycold/Chatbot-Engine-Gateway", 
       images: [
         {
@@ -101,9 +103,10 @@ export const cvData = {
       id: 4,
       title: "IoT Analytics with ESP32",
       description: "Hardware automation and data collection project using ESP32 microcontrollers. Simulates data streams that are captured and analyzed in real-time.",
+      highlights: ["Real-time Telemetry Streams", "MicroPython Sensor Driver", "Wokwi Cloud Simulation"],
       tech: ["MicroPython", "ESP32", "IoT", "Data Collection"],
       liveUrl: "https://wokwi.com/projects/472522834701502465",
-      repoUrl: "#", 
+      repoUrl: null, 
       images: [
         {
           url: "https://i.imgur.com/XfYmIFJ.png",
@@ -124,8 +127,9 @@ export const cvData = {
       title: "Automated Web Scraping Engine",
       status: "In Progress",
       description: "Scalable web scraping solution designed to extract large volumes of data from various sources. Built with anti-bot bypassing and automated pipeline exporting.",
+      highlights: ["Automated Data Pipelines", "Anti-Bot Bypassing", "Pandas Clean ETL Export"],
       tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
-      liveUrl: "#",
+      liveUrl: null,
       repoUrl: "https://github.com/waycold/", 
       images: [
         {

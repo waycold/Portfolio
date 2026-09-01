@@ -57,7 +57,7 @@ const Hero = () => {
           <div className="relative w-full max-w-md bg-charcoal-900 border border-border-color rounded-lg shadow-2xl shadow-black/50 overflow-hidden select-none">
             {/* Terminal Window Header */}
             <div className="flex items-center justify-between px-4 py-2.5 bg-charcoal-950 border-b border-border-color">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5" aria-hidden="true">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
@@ -67,8 +67,8 @@ const Hero = () => {
             </div>
 
             {/* Code Body */}
-            <div className="p-4 sm:p-5 font-mono text-xs sm:text-xs text-charcoal-300 leading-relaxed bg-[#0b0e14]/90 space-y-1 overflow-x-auto">
-              <p className="text-charcoal-500 italic">-- Automated Data Pipeline & KPIs</p>
+            <div className="p-4 sm:p-5 font-mono text-xs sm:text-xs text-charcoal-200 leading-relaxed bg-charcoal-950/95 space-y-1 overflow-x-auto">
+              <p className="text-charcoal-400 italic">-- Automated Data Pipeline & KPIs</p>
               <p><span className="text-azure-400 font-bold">SELECT</span></p>
               <p className="pl-4">timestamp,</p>
               <p className="pl-4">metric_name,</p>
@@ -79,21 +79,15 @@ const Hero = () => {
               <p><span className="text-azure-400 font-bold">GROUP BY</span> timestamp, metric_name;</p>
             </div>
 
-            {/* Micro Stats Banner */}
-            <div className="grid grid-cols-2 gap-2 p-3 bg-charcoal-850 border-t border-border-color text-xs">
-              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded bg-charcoal-900 border border-border-color/60">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
-                <div className="truncate">
-                  <span className="block text-[10px] text-charcoal-400 uppercase font-semibold">ETL Pipeline</span>
-                  <span className="font-bold text-white text-[11px]">Automated 24/7</span>
-                </div>
+            {/* Terminal Telemetry Status Bar */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-charcoal-900 border-t border-border-color text-[11px] font-mono text-charcoal-400">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Pipeline: <strong className="text-white font-semibold">Active</strong></span>
               </div>
-              <div className="flex items-center gap-2 px-2.5 py-1.5 rounded bg-charcoal-900 border border-border-color/60">
-                <span className="w-2 h-2 rounded-full bg-azure-400 shrink-0"></span>
-                <div className="truncate">
-                  <span className="block text-[10px] text-charcoal-400 uppercase font-semibold">Insights</span>
-                  <span className="font-bold text-white text-[11px]">Real-time SQL</span>
-                </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-azure-400"></span>
+                <span>Latency: <strong className="text-white font-semibold">&lt;12ms</strong></span>
               </div>
             </div>
 
