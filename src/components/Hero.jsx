@@ -1,5 +1,5 @@
 import React from 'react';
-import { cvData } from '../data/content';
+import { cvData } from '../data/content.js';
 
 const Hero = () => {
   const { personalInfo, hero } = cvData;
@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="home" className="section-container min-h-[90vh] sm:min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 relative">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-        
+
         {/* Left Column: Typography and Call to Action */}
         <div className="lg:col-span-7 flex flex-col justify-center">
           {/* Status Pill Badge */}
@@ -25,7 +25,7 @@ const Hero = () => {
           <p className="text-base sm:text-lg md:text-xl text-charcoal-300 leading-relaxed md:leading-[1.8] max-w-2xl mb-8 sm:mb-10">
             {hero.description}
           </p>
-          
+
           <div className="flex flex-wrap items-center gap-4">
             <a href="#projects" className="btn-primary">
               <span>Explore Work</span>
@@ -34,9 +34,9 @@ const Hero = () => {
               </svg>
             </a>
             {personalInfo.cvPdfUrl && (
-              <a 
-                href={personalInfo.cvPdfUrl} 
-                download 
+              <a
+                href={personalInfo.cvPdfUrl}
+                download
                 className="btn-secondary"
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

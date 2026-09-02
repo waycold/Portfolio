@@ -1,23 +1,23 @@
 export const cvData = {
   personalInfo: {
     name: "Facundo Rizzato",
-    title: "Data Analyst & Automation",
-    email: "facurizzato2012@gmail.com", // Update with your main email
+    title: "Data & Automation",
+    email: "facurizzato2012@gmail.com",
     linkedin: "https://www.linkedin.com/in/facundo-rizzato-63a055259/",
     github: "https://github.com/waycold",
-    cvPdfUrl: "/cv.pdf", // Update when you have the final PDF
+    cvPdfUrl: "public/Resume.pdf",
   },
   hero: {
-    headline: "Transforming complex data into strategic decisions.",
-    description: "Informatics Engineering student specializing in data pipelines, SQL analytics, and automated business intelligence.",
+    headline: "Hi, I'm Facundo — Software Engineering student.",
+    description: "I specialize in data analytics, automation, and software development. Explore my projects below.",
   },
-  about: {
+ about: {
     bio: [
-      "Informatics Engineering student at Universidad Nacional de La Matanza (UNLaM) with a focus on data analytics and process automation. I design relational database schemas, build automated ETL pipelines in Python and SQL, and develop interactive Power BI dashboards for executive decision-making.",
-      "Experienced in transforming raw transactional data into clear, actionable business insights. Seeking Data Analyst and Automation Engineering opportunities to optimize data workflows and drive measurable impact."
+      "I'm a Software Engineering student at Universidad Nacional de La Matanza (UNLaM), with a growing focus on data analytics and automation. Most of my projects sit between software and data: designing relational databases, generating and processing data with Python and SQL, and building Power BI reports to make that data easier to understand.",
+      "I enjoy taking a project from the data model all the way to something you can actually use. For example, my e-commerce project combines a Django backend, PostgreSQL, simulated transactional data, and analytics in the same system. I'm currently looking for opportunities where I can keep building in data, automation, and software engineering."
     ],
     details: [
-      { label: "Education", value: "Informatics Engineering, UNLaM" },
+      { label: "Education", value: "Software Engineering, UNLaM" },
       { label: "Specialization", value: "Data Analysis, Automation & BI" },
       { label: "Location", value: "Buenos Aires, Argentina" },
     ]
@@ -32,18 +32,18 @@ export const cvData = {
     {
       id: 1,
       title: "E-Commerce Django, Data Simulation & Analytics",
-      description: "Backend platform developed in Django that integrates transactional data simulation to generate analytical metrics for users and purchases.",
+      description: "A Django e-commerce application built around a PostgreSQL database, with simulated orders and user activity used to test and explore real-world analytics scenarios.",
       highlights: ["10K+ Simulated Transactions", "Real-time Metrics Pipeline", "PostgreSQL Relational Schema"],
       tech: ["Python", "Django", "PostgreSQL"],
       liveUrl: "https://ecommerce-django-fd4t.onrender.com/",
-      repoUrl: "https://github.com/waycold/ecommerce_Django", 
+      repoUrl: "https://github.com/waycold/ecommerce_Django",
       images: [
         {
           url: "https://i.imgur.com/AUYNzwq.png",
           title: "Simulation Controls & Live Metrics Dashboard"
         },
         {
-          url: "https://i.imgur.com/in353v2.png",
+          url: "https://i.imgur.com/WGUy5rp.gif",
           title: "User Behavior & Transaction Analysis"
         },
         {
@@ -59,11 +59,11 @@ export const cvData = {
     {
       id: 2,
       title: "Business Dashboard in PowerBI",
-      description: "Power BI report with interactive data visualizations for tracking key performance indicators and revenue growth.",
+      description: "A Power BI report built to explore sales performance, revenue, customer behavior, and other business metrics across different dimensions.",
       highlights: ["Multi-dimensional DAX Models", "Executive KPI Tracking", "Automated Trend Forecasting"],
       tech: ["Power BI", "DAX", "SQL"],
       liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiOGRmNDViMzktNDUyMi00ZmQzLThmYTEtMWNiMmZiYzQzZjMwIiwidCI6IjI0ODRhMTEyLTFlZTUtNGJhNi05MGQ1LTdmZWExMGJmZjUyYSJ9",
-      repoUrl: null, 
+      repoUrl: null,
       images: [
         {
           url: "https://i.imgur.com/B7j6xnE.png",
@@ -83,30 +83,34 @@ export const cvData = {
       id: 3,
       title: "Chatbot for Financial Forecasting & Risk Management",
       status: "In Progress",
-      description: "Interactive chatbot designed to assist in financial forecasting and risk management. Utilizes predictive analytics to provide insights and recommendations.",
+      description: "A work-in-progress chatbot that connects a conversational interface with business data, with the goal of making sales analysis and forecasting easier to explore through natural language.",
       highlights: ["Predictive Analytics Engine", "NLP Business Contextualization", "Automated Risk Signals"],
       tech: ["Python", "Machine Learning", "NLP", "Power BI"],
       liveUrl: null,
-      repoUrl: "https://github.com/waycold/Chatbot-Engine-Gateway", 
+      repoUrl: "https://github.com/waycold/Chatbot-Engine-Gateway",
       images: [
         {
           url: "https://i.imgur.com/sweKfrf.png",
           title: "Ecommerce agent with bussiness context"
         },
         {
-          url: "https://images.unsplash.com/photo-1659018966820-de07c94e0d01?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          url: "https://images.unsplash.com/photo-1659018966820-de07c94e0d01?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHxhfGVufDB8fHx8fA%3D%3D",
           title: "Chatbot Interface & User Interaction"
-        }
+        },
+        {
+          url: "https://i.imgur.com/sBzUnxC.gif",
+          title: "Test"
+        },
       ]
     },
     {
       id: 4,
       title: "IoT Analytics with ESP32",
-      description: "Hardware automation and data collection project using ESP32 microcontrollers. Simulates data streams that are captured and analyzed in real-time.",
+      description: "An ESP32 project for collecting sensor data and experimenting with how device telemetry can be captured and analyzed as it is produced.",
       highlights: ["Real-time Telemetry Streams", "MicroPython Sensor Driver", "Wokwi Cloud Simulation"],
       tech: ["MicroPython", "ESP32", "IoT", "Data Collection"],
       liveUrl: "https://wokwi.com/projects/472522834701502465",
-      repoUrl: null, 
+      repoUrl: null,
       images: [
         {
           url: "https://i.imgur.com/XfYmIFJ.png",
@@ -126,11 +130,11 @@ export const cvData = {
       id: 5,
       title: "Automated Web Scraping Engine",
       status: "In Progress",
-      description: "Scalable web scraping solution designed to extract large volumes of data from various sources. Built with anti-bot bypassing and automated pipeline exporting.",
+      description: "A work-in-progress Python scraper for collecting data from websites and turning the extracted information into structured datasets ready for analysis.",
       highlights: ["Automated Data Pipelines", "Anti-Bot Bypassing", "Pandas Clean ETL Export"],
       tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
       liveUrl: null,
-      repoUrl: "https://github.com/waycold/", 
+      repoUrl: "https://github.com/waycold/",
       images: [
         {
           url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
