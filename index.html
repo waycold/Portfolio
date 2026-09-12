@@ -5,13 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Facundo Rizzato | Data Analyst & Automation</title>
-    <meta name="description" content="Portfolio of Facundo Rizzato – Informatics Engineering student specialized in data analysis, automated ETL pipelines, SQL modeling, and Power BI dashboards." />
+    <meta name="description" content="Portfolio of Facundo Rizzato – Software Engineering student specialized in data analysis, automated ETL pipelines, SQL modeling, and Power BI dashboards." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!--
+      AI chat widget (ported from Chatbot-Engine-Gateway/frontend/chat-widget.js,
+      recolored to the portfolio's sage/lavender palette). Zero-dependency Shadow
+      DOM web component — self-contained, safe to load alongside the React app.
+      data-api-url must point at the deployed FastAPI gateway; until that service
+      is deployed (and its BACKEND_CORS_ORIGINS includes this site's origin) the
+      widget will simply show an "offline" status instead of breaking the page.
+    -->
+    <script
+      src="/chat-widget.js"
+      data-api-url="https://ai-agent-gateway-sued.onrender.com"
+      data-agent="portfolio"
+    ></script>
   </body>
 </html>
