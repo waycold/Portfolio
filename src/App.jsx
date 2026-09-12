@@ -1,26 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import Stack from './components/Stack';
-import About from './components/About';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ProjectPage from './pages/ProjectPage';
+
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0 });
+      return;
+    }
+
+    const id = location.hash.slice(1);
+    const timeoutId = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }, 80);
+
+    return () => clearTimeout(timeoutId);
+  }, [location.pathname, location.hash]);
+
+  return null;
+}
+
 function App() {
   return (
-    <div className="min-h-screen bg-charcoal-950 text-white flex flex-col antialiased selection:bg-azure-600 selection:text-white">
-      <Navbar />
-      
-      <main className="flex-grow">
-        <Hero />
-        <Projects />
-        <Stack />
-        <About />
-        <Contact />
-      </main>
-      
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <ScrollToHash />
+        <div className="min-h-screen bg-background text-foreground flex flex-col antialiased selection:bg-primary selection:text-primary-foreground">
+          <Navbar />
+
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/projects/:projectId" element={<ProjectPage />} />
+            </Routes>
+          </main>
+
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

@@ -1,92 +1,167 @@
 @import "tailwindcss";
 
-@theme {
-  /* Core Slate & Neutral Colors */
-  --color-charcoal-950: #0a0d12;
-  --color-charcoal-900: #10141d;
-  --color-charcoal-850: #161c28;
-  --color-charcoal-800: #1e2637;
-  --color-charcoal-700: #2d374d;
-  --color-charcoal-600: #475569;
-  --color-charcoal-500: #64748b;
-  --color-charcoal-400: #94a3b8;
-  --color-charcoal-300: #cbd5e1;
-  --color-charcoal-200: #e2e8f0;
-  --color-charcoal-100: #f1f5f9;
-  --color-charcoal-50: #f8fafc;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  /* Azure & Blue Brand Accent */
-  --color-azure-300: #93c5fd;
-  --color-azure-400: #60a5fa;
-  --color-azure-500: #3b82f6;
-  --color-azure-600: #2563eb;
-  --color-azure-700: #1d4ed8;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-hover: var(--card-hover);
 
-  /* Semantic Variables */
-  --color-bg-primary: #090c10;
-  --color-bg-surface: #0f131a;
-  --color-bg-card: #151a24;
-  --color-bg-card-hover: #1a2230;
-  --color-border-color: #232c3d;
-  --color-border-subtle: #19202c;
-  
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-text-muted: #8b9bb4;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-  --color-brand-primary: #3b82f6;
-  --color-brand-accent: #60a5fa;
-  
-  --color-status-error: #ef4444;
-  --color-status-success: #10b981;
-  --color-status-warning: #f59e0b;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "DM Serif Display", "Iowan Old Style", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  --background: #f4f1f0;
+  --foreground: #3f4144;
+
+  --card: #edecea;
+  --card-foreground: #1e1d1b;
+  --card-hover: #e6e4df;
+
+  --primary: #4f6a5a;
+  --primary-foreground: #f4f3ef;
+
+  --secondary: #dbe8dd;
+  --secondary-foreground: #26382c;
+
+  --muted: #7e9399;
+  --muted-foreground: #7a7671;
+
+  --accent: #b8a9cc;
+  --accent-foreground: #2d2838;
+
+  --border: #d6d3cc;
+  --border-subtle: #e0ddd5;
+  --ring: #4f6a5a;
+  --radius: 8px;
+
+  --success: #4f6a5a;
+  --warning: #b08a3e;
+  --error: #b5533c;
+}
+
+.dark {
+  --background: #181720;
+  --foreground: #e8e6e0;
+
+  --card: #201f2b;
+  --card-foreground: #e8e6e0;
+  --card-hover: #262533;
+
+  --primary: #7ea68e;
+  --primary-foreground: #0f0f16;
+
+  --secondary: #2d2838;
+  --secondary-foreground: #c8c2d6;
+
+  --muted: #252333;
+  --muted-foreground: #928fa0;
+
+  --accent: #9b8cb4;
+  --accent-foreground: #e8e6e0;
+
+  --border: #2e2c3a;
+  --border-subtle: #26243030;
+  --ring: #7ea68e;
+
+  --success: #7ea68e;
+  --warning: #d1a860;
+  --error: #d1755f;
 }
 
 @layer base {
+  html, body, #root {
+    height: 100%;
+  }
+
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
   }
-  
+
   body {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
   }
 
   ::selection {
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
   }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 }
 
 @layer components {
   .section-container {
     @apply max-w-6xl mx-auto px-6 py-16 md:py-24;
   }
-  
+
   .heading-lg {
-    @apply text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6;
+    @apply text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-foreground mb-6 font-serif;
   }
-  
+
   .heading-md {
-    @apply text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-6 md:mb-10;
+    @apply text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-foreground mb-6 md:mb-10 font-serif;
   }
 
   .text-body {
-    @apply text-base md:text-lg text-charcoal-300 leading-relaxed;
+    @apply text-base md:text-lg text-muted-foreground leading-relaxed;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-primary font-medium;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-azure-600 text-white font-medium shadow-md shadow-azure-600/20 hover:bg-azure-500 hover:shadow-lg hover:shadow-azure-500/30 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-charcoal-850/80 text-white font-medium border border-border-color hover:bg-charcoal-800 hover:border-azure-500/60 hover:text-azure-300 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-bg-primary cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-transparent text-foreground font-medium border border-border hover:bg-muted active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
   }
 
   .tag-item {
-    @apply px-2.5 py-0.5 bg-charcoal-850 text-azure-400 text-xs sm:text-sm font-medium rounded border border-border-color shadow-sm;
+    @apply px-2.5 py-0.5 bg-secondary text-secondary-foreground text-xs sm:text-sm font-medium rounded-md border border-border;
   }
 }
