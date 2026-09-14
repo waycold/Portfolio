@@ -6,8 +6,8 @@ const Contact = () => {
   const { email, linkedin } = cvData.personalInfo;
 
   return (
-    <section id="contact" className="bg-muted">
-      <div className="section-container">
+    <section id="contact" className="min-h-[70dvh] flex flex-col justify-center py-20 bg-muted">
+      <div className="section-container py-0 w-full">
         <Reveal>
           <div className="rounded-2xl bg-card border border-border p-8 sm:p-12 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-10 shadow-sm">
             <div className="max-w-md">

@@ -28,7 +28,7 @@ const Footer = () => {
             href={cvData.personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="GitHub Profile (opens in new tab)"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -39,7 +39,7 @@ const Footer = () => {
             href={cvData.personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="LinkedIn Profile (opens in new tab)"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -48,7 +48,7 @@ const Footer = () => {
           </a>
           <button
             onClick={scrollToTop}
-            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-muted cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="min-w-[44px] min-h-[44px] text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors rounded hover:bg-foreground/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="Scroll to top"
             title="Back to top"
           >

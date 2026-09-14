@@ -5,7 +5,7 @@ import ProjectCard from './projects/ProjectCard';
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-container">
+    <section id="projects" className="section-container min-h-dvh flex flex-col justify-center py-20">
       <Reveal>
         <div className="text-center mb-12 md:mb-16">
           <p className="eyebrow mb-3">Portfolio</p>

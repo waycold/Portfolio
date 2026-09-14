@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cvData } from '../data/content';
 import Reveal from './common/Reveal';
 import TechIcon from './common/TechIcon';
 
 const SkillBadge = ({ tech }) => {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`rounded-2xl flex flex-col items-center justify-center gap-3 py-6 px-4 transition-all duration-200 border ${
-        hovered ? 'bg-secondary border-accent -translate-y-[3px] shadow-lg' : 'bg-card border-border'
-      }`}
+      className="group rounded-2xl flex flex-col items-center justify-center gap-3 py-6 px-4 bg-card border border-border hover:bg-card-hover hover:border-accent hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 ease-out cursor-default"
     >
       <TechIcon label={tech} size={42} />
-      <span className="text-xs font-mono text-center text-muted-foreground">{tech}</span>
+      <span className="text-xs font-mono text-center text-card-foreground font-medium transition-colors duration-300">
+        {tech}
+      </span>
     </div>
   );
 };
@@ -24,24 +20,24 @@ const allTechnologies = cvData.stack.flatMap((group) => group.technologies);
 
 const Stack = () => {
   return (
-    <section id="stack" className="bg-muted">
-      <div className="section-container">
+    <section id="stack" className="min-h-dvh flex flex-col justify-center py-20 bg-muted">
+      <div className="section-container py-0 w-full">
         <Reveal>
           <div className="mb-12">
-            <p className="eyebrow mb-3">Technical stack</p>
-            <h2 className="heading-md !mb-0">Skills &amp; Tools</h2>
+            <p className="eyebrow mb-3 !text-muted-subtext">Technical stack</p>
+            <h2 className="heading-md !mb-0 !text-muted-subtext">Skills &amp; Tools</h2>
           </div>
         </Reveal>
 
 
     <Reveal>
-      <p className="text-sm sm:text-base leading-7 mb-10 text-muted-foreground">
-        I focus on <strong className="text-foreground">data and automation</strong>, with{' '}
-        <strong className="text-foreground">Python</strong> as my main tool for data processing, backend development,
-        and automated workflows. I use <strong className="text-foreground">SQL</strong> and{' '}
-        <strong className="text-foreground">PostgreSQL</strong> to work with relational data, and{' '}
-        <strong className="text-foreground">Power BI</strong> to build dashboards and communicate insights. My{' '}
-        <strong className="text-foreground">Django</strong> experience also gives me a strong backend foundation,
+      <p className="text-sm sm:text-base leading-7 mb-10 text-muted-subtext">
+        I focus on <strong>data and automation</strong>, with{' '}
+        <strong>Python</strong> as my main tool for data processing, backend development,
+        and automated workflows. I use <strong>SQL</strong> and{' '}
+        <strong>PostgreSQL</strong> to work with relational data, and{' '}
+        <strong>Power BI</strong> to build dashboards and communicate insights. My{' '}
+        <strong>Django</strong> experience also gives me a strong backend foundation,
         allowing me to build applications that connect data, business logic, and automation.
       </p>
     </Reveal>

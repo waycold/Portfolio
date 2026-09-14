@@ -13,7 +13,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="section-container min-h-[90vh] sm:min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 relative">
+    <section id="home" className="section-container min-h-dvh flex flex-col justify-center pt-24 pb-16 relative">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
         <div className="lg:col-span-7 flex flex-col justify-center">
@@ -85,7 +85,7 @@ const Hero = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
                 </div>
-                <span className="text-[11px] font-mono text-muted-foreground">query_analytics.sql</span>
+                <span className="text-[11px] font-mono text-muted-subtext">query_analytics.sql</span>
                 <span className="w-8"></span>
               </div>
 
@@ -101,14 +101,14 @@ const Hero = () => {
                 <p><span className="text-primary font-bold">GROUP BY</span> timestamp, metric_name;</p>
               </div>
 
-              <div className="flex items-center justify-between px-4 py-2.5 bg-muted border-t border-border text-[11px] font-mono text-muted-foreground">
+              <div className="flex items-center justify-between px-4 py-2.5 bg-muted border-t border-border text-[11px] font-mono text-muted-subtext">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-success"></span>
-                  <span>Pipeline: <strong className="text-foreground font-semibold">Active</strong></span>
+                  <span>Pipeline: <strong className="font-semibold">Active</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  <span>Latency: <strong className="text-foreground font-semibold">&lt;12ms</strong></span>
+                  <span>Latency: <strong className="font-semibold">&lt;12ms</strong></span>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ const About = () => {
   const { about } = cvData;
 
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="section-container min-h-dvh flex flex-col justify-center py-20">
       <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-12 items-start">
         <div>
           <Reveal>
@@ -40,7 +40,7 @@ const About = () => {
 
             <dl className="space-y-2">
               {about.details && about.details.map((item, idx) => (
-                <div key={idx} className="rounded-lg bg-muted p-3">
+                <div key={idx} className="rounded-lg bg-muted/15 p-3">
                   <dt className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground mb-0.5">
                     {item.label}
                   </dt>

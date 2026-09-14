@@ -247,33 +247,40 @@
 
     :host {
       --fab-size: 56px;
-      --accent: #7ea68e;
-      --accent-hover: #6b9179;
-      --accent-glow: rgba(126, 166, 142, 0.35);
-      --accent-subtle: rgba(126, 166, 142, 0.14);
-      --bg-surface: #181720;
-      --bg-panel: #201f2b;
-      --bg-card: #252333;
-      --bg-card-hover: #2b2939;
-      --bg-bubble-user: #3f5c4c;
-      --bg-bubble-ai: #201f2b;
-      --border-subtle: #232030;
-      --border-medium: #2e2c3a;
-      --border-focus: #7ea68e;
-      --text-primary: #e8e6e0;
-      --text-secondary: #a29fae;
-      --text-muted: #706c7c;
       --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'DM Mono', Consolas, Monaco, monospace;
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
       --radius-full: 9999px;
-      --shadow-fab: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(126, 166, 142, 0.3);
-      --shadow-window: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
       --status-online: #5fbf89;
       --status-checking: #d1a860;
       --status-offline: #d1755f;
+
+      /* Light mode tokens (default) */
+      --bg-surface: #f4f1f0;
+      --bg-panel: #ededee;
+      --bg-card: #ffffff;
+      --bg-card-hover: #e4e1de;
+      --bg-bubble-user: #4a6a62;
+      --bg-bubble-ai: #ededee;
+      --text-primary: #3f4144;
+      --text-secondary: #63666a;
+      --text-muted: #7e9399;
+      --border-subtle: #e6e3dd;
+      --border-medium: #dcd8d2;
+      --border-focus: #4a6a62;
+      --accent: #4a6a62;
+      --accent-hover: #3b554e;
+      --accent-glow: rgba(74, 106, 98, 0.3);
+      --accent-subtle: rgba(74, 106, 98, 0.12);
+      --shadow-fab: 0 8px 24px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(74, 106, 98, 0.25);
+      --shadow-window: 0 16px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      --code-bg: #dedad5;
+      --code-header-bg: #d3cfc9;
+      --code-text: #2f3633;
+      --table-bg: #f7f5f3;
+
       font-family: var(--font-sans);
       font-size: 14px;
       line-height: 1.5;
@@ -283,6 +290,33 @@
       right: 24px;
       z-index: 999999;
       pointer-events: none;
+    }
+
+    :host([theme="dark"]),
+    :host(.dark) {
+      /* Dark mode tokens */
+      --bg-surface: #181720;
+      --bg-panel: #201f2b;
+      --bg-card: #252333;
+      --bg-card-hover: #2b2939;
+      --bg-bubble-user: #3f5c4c;
+      --bg-bubble-ai: #201f2b;
+      --text-primary: #e8e6e8;
+      --text-secondary: #a29fae;
+      --text-muted: #706c7c;
+      --border-subtle: #232030;
+      --border-medium: #2e2c3a;
+      --border-focus: #7ea68e;
+      --accent: #7ea68e;
+      --accent-hover: #6b9179;
+      --accent-glow: rgba(126, 166, 142, 0.35);
+      --accent-subtle: rgba(126, 166, 142, 0.14);
+      --shadow-fab: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(126, 166, 142, 0.3);
+      --shadow-window: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      --code-bg: #100f18;
+      --code-header-bg: #15131e;
+      --code-text: #f1f5f9;
+      --table-bg: #131019;
     }
 
     .widget-root {
@@ -298,7 +332,7 @@
       width: var(--fab-size);
       height: var(--fab-size);
       border-radius: 50%;
-      background: linear-gradient(135deg, #3f5c4c 0%, #7ea68e 100%);
+      background: linear-gradient(135deg, var(--bg-bubble-user) 0%, var(--accent) 100%);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
       display: flex;
@@ -306,14 +340,16 @@
       justify-content: center;
       cursor: pointer;
       box-shadow: var(--shadow-fab);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                  background 0.3s ease;
       position: relative;
       user-select: none;
     }
 
     .widget-fab:hover {
       transform: scale(1.06) translateY(-2px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 4px 12px var(--accent-glow);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 4px 12px var(--accent-glow);
     }
 
     .widget-fab:active {
@@ -335,14 +371,12 @@
       transform: scale(0.6) rotate(-90deg);
     }
 
-    .widget-fab.open .fab-icon-chat {
-      opacity: 0;
-      transform: scale(0.6) rotate(90deg);
-    }
-
-    .widget-fab.open .fab-icon-close {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
+    /* When window is open, hide the floating FAB launcher (close button is in header) */
+    .widget-fab.open {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: scale(0.6) !important;
     }
 
     /* Unread Indicator Pulse */
@@ -356,6 +390,7 @@
       background-color: var(--status-online);
       border: 2px solid var(--bg-surface);
       box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+      transition: border-color 0.3s ease;
     }
 
     /* Chat Floating Window */
@@ -377,7 +412,11 @@
       opacity: 0;
       transform: scale(0.92) translateY(20px);
       pointer-events: none;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.3s ease,
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease;
       transform-origin: bottom right;
     }
 
@@ -397,6 +436,7 @@
       justify-content: space-between;
       gap: 8px;
       flex-shrink: 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .header-agent-info {
@@ -413,12 +453,13 @@
       height: 32px;
       border-radius: 50%;
       background-color: var(--accent-subtle);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      border: 1px solid var(--accent-glow);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 16px;
       flex-shrink: 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .agent-title-box {
@@ -437,11 +478,13 @@
       font-size: 13.5px;
       font-weight: 600;
       color: var(--text-primary);
+      transition: color 0.3s ease;
     }
 
     .agent-subrole {
       font-size: 11px;
       color: var(--text-secondary);
+      transition: color 0.3s ease;
     }
 
     .header-controls {
@@ -507,6 +550,8 @@
       flex-direction: column;
       gap: 14px;
       scroll-behavior: smooth;
+      background-color: var(--bg-panel);
+      transition: background-color 0.3s ease;
     }
 
     .window-body::-webkit-scrollbar {
@@ -532,12 +577,13 @@
       height: 50px;
       border-radius: 50%;
       background-color: var(--accent-subtle);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      border: 1px solid var(--accent-glow);
       font-size: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 12px;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .welcome-heading {
@@ -545,6 +591,7 @@
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 6px;
+      transition: color 0.3s ease;
     }
 
     .welcome-text {
@@ -552,6 +599,7 @@
       color: var(--text-secondary);
       line-height: 1.5;
       margin-bottom: 16px;
+      transition: color 0.3s ease;
     }
 
     .widget-starters-list {
@@ -569,7 +617,7 @@
       font-size: 12px;
       text-align: left;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -609,9 +657,10 @@
       border-radius: var(--radius-md) var(--radius-md) 2px var(--radius-md);
       max-width: 82%;
       padding: 10px 14px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
       font-size: 13.5px;
       line-height: 1.45;
+      transition: background-color 0.3s ease;
     }
 
     .msg-row.assistant {
@@ -630,6 +679,7 @@
       font-size: 14px;
       flex-shrink: 0;
       margin-top: 2px;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .msg-content-wrap {
@@ -645,11 +695,13 @@
       margin-bottom: 3px;
       font-size: 11px;
       color: var(--text-muted);
+      transition: color 0.3s ease;
     }
 
     .msg-header-meta .agent-tag {
       font-weight: 600;
       color: var(--text-primary);
+      transition: color 0.3s ease;
     }
 
     .msg-row.assistant .msg-bubble {
@@ -661,6 +713,7 @@
       font-size: 13px;
       line-height: 1.5;
       word-break: break-word;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     .msg-row.system {
@@ -674,6 +727,7 @@
       padding: 4px 12px;
       font-size: 11px;
       color: var(--text-secondary);
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     /* Markdown inside Widget */
@@ -696,18 +750,21 @@
       margin: 8px 0;
       font-style: italic;
       color: var(--text-secondary);
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
     .msg-bubble a {
-      color: #b8a9cc;
+      color: var(--accent);
       text-decoration: underline;
+      font-weight: 500;
     }
     .msg-bubble code:not(pre code) {
       font-family: var(--font-mono);
       font-size: 11.5px;
-      background-color: #100f18;
-      color: #9fd1b5;
+      background-color: var(--code-bg);
+      color: var(--accent);
       padding: 2px 4px;
       border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Code block container */
@@ -715,17 +772,19 @@
       margin: 10px 0;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-medium);
-      background-color: #100f18;
+      background-color: var(--code-bg);
       overflow: hidden;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .code-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #15131e;
+      background-color: var(--code-header-bg);
       padding: 4px 8px;
       border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .code-language {
@@ -747,6 +806,7 @@
       cursor: pointer;
       padding: 2px 5px;
       border-radius: 3px;
+      transition: all 0.15s ease;
     }
 
     .btn-copy-code:hover {
@@ -763,9 +823,10 @@
     .code-block-container code {
       font-family: var(--font-mono);
       font-size: 11.5px;
-      color: #f1f5f9;
+      color: var(--code-text);
       line-height: 1.45;
       white-space: pre;
+      transition: color 0.3s ease;
     }
 
     .table-wrapper {
@@ -773,8 +834,9 @@
       margin: 10px 0;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-medium);
-      background-color: #131019;
+      background-color: var(--table-bg);
       -webkit-overflow-scrolling: touch;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .msg-bubble table {
@@ -790,6 +852,7 @@
       font-weight: 600;
       border-bottom: 1px solid var(--border-medium);
       white-space: nowrap;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .msg-bubble td {
@@ -797,10 +860,11 @@
       padding: 6px 10px;
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
+      transition: border-color 0.3s ease;
     }
 
     .msg-bubble tr:hover td {
-      background-color: rgba(59, 130, 246, 0.05);
+      background-color: var(--accent-subtle);
     }
 
     .kpi-tag {
@@ -842,6 +906,7 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       width: fit-content;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .typing-wave-dot {
@@ -867,6 +932,7 @@
       border-top: 1px solid var(--border-subtle);
       padding: 10px 14px 12px;
       flex-shrink: 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .input-box {
@@ -877,7 +943,7 @@
       border: 1px solid var(--border-medium);
       border-radius: var(--radius-md);
       padding: 6px 8px 6px 12px;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: background-color 0.3s ease, border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .input-box:focus-within {
@@ -897,10 +963,12 @@
       font-size: 13.5px;
       line-height: 1.4;
       resize: none;
+      transition: color 0.3s ease;
     }
 
     .widget-textarea::placeholder {
       color: var(--text-muted);
+      transition: color 0.3s ease;
     }
 
     .btn-send-widget {
@@ -914,7 +982,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
       flex-shrink: 0;
     }
 
@@ -951,11 +1019,13 @@
       color: var(--text-muted);
       margin-top: 6px;
       padding: 0 2px;
+      transition: color 0.3s ease;
     }
 
     .session-indicator {
       font-family: var(--font-mono);
       cursor: pointer;
+      transition: color 0.2s ease;
     }
 
     .session-indicator:hover {
@@ -967,6 +1037,9 @@
       :host {
         bottom: 16px;
         right: 16px;
+      }
+      .widget-fab.open {
+        display: none !important;
       }
       .widget-window {
         position: fixed;
@@ -997,8 +1070,9 @@
       this.abortController = null;
       this.sessionId = this._getOrCreateSessionId();
 
-      // Health ping timer
+      // Timers & Observers
       this._pingTimer = null;
+      this._themeObserver = null;
     }
 
     static get observedAttributes() {
@@ -1015,6 +1089,30 @@
     }
 
     connectedCallback() {
+      // Dynamic Light / Dark Mode Synchronization
+      const updateTheme = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        const theme = isDark ? 'dark' : 'light';
+        this.setAttribute('theme', theme);
+        this.classList.toggle('dark', isDark);
+      };
+
+      updateTheme();
+
+      this._themeObserver = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          if (m.type === 'attributes' && m.attributeName === 'class') {
+            updateTheme();
+            break;
+          }
+        }
+      });
+
+      this._themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+
       this._render();
       this._bindEvents();
       this._checkHealth();
@@ -1025,7 +1123,14 @@
     }
 
     disconnectedCallback() {
-      if (this._pingTimer) clearInterval(this._pingTimer);
+      if (this._pingTimer) {
+        clearInterval(this._pingTimer);
+        this._pingTimer = null;
+      }
+      if (this._themeObserver) {
+        this._themeObserver.disconnect();
+        this._themeObserver = null;
+      }
     }
 
     // --- Session Management (sessionStorage) ---
@@ -1303,15 +1408,23 @@
     }
 
     _updateAgentDisplay() {
+      if (!this.shadowRoot) return;
       const agent = AGENTS[this.activeAgent] || AGENTS.portfolio;
       const root = this.shadowRoot;
-      root.querySelector('#header-avatar').textContent = agent.icon;
-      root.querySelector('#header-agent-name').textContent = agent.name;
-      root.querySelector('#header-agent-role').textContent = agent.role;
+
+      const avatarEl = root.querySelector('#header-avatar');
+      if (avatarEl) avatarEl.textContent = agent.icon;
+
+      const nameEl = root.querySelector('#header-agent-name');
+      if (nameEl) nameEl.textContent = agent.name;
+
+      const roleEl = root.querySelector('#header-agent-role');
+      if (roleEl) roleEl.textContent = agent.role;
 
       // If no messages yet, update welcome hero
-      if (this.messages.length === 0) {
-        root.querySelector('#window-body').innerHTML = this._getWelcomeHtml(agent);
+      const bodyEl = root.querySelector('#window-body');
+      if (bodyEl && this.messages.length === 0) {
+        bodyEl.innerHTML = this._getWelcomeHtml(agent);
       }
     }
 

@@ -16,6 +16,7 @@
 
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-muted-subtext: var(--muted-subtext);
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
@@ -23,6 +24,13 @@
   --color-border: var(--border);
   --color-border-subtle: var(--border-subtle);
   --color-ring: var(--ring);
+
+  --color-chart-primary: var(--chart-primary);
+  --color-chart-accent: var(--chart-accent);
+  --color-chart-fill: var(--chart-fill);
+  --color-chart-grid: var(--chart-grid);
+  --color-table-header-bg: var(--table-header-bg);
+  --color-table-border: var(--table-border);
 
   --color-success: var(--success);
   --color-warning: var(--warning);
@@ -41,38 +49,46 @@
   --background: #f4f1f0;
   --foreground: #3f4144;
 
-  --card: #edecea;
-  --card-foreground: #1e1d1b;
-  --card-hover: #e6e4df;
+  --card: #ededee;
+  --card-foreground: #17181a;
+  --card-hover: #e4e1de;
 
-  --primary: #4f6a5a;
-  --primary-foreground: #f4f3ef;
+  --primary: #4a6a62;
+  --primary-foreground: #ffffff;
 
-  --secondary: #dbe8dd;
-  --secondary-foreground: #26382c;
+  --secondary: #c8e0df;
+  --secondary-foreground: #122a1c;
 
   --muted: #7e9399;
-  --muted-foreground: #7a7671;
+  --muted-foreground: #63666a;
+  --muted-subtext: #FCFBF9;
 
-  --accent: #b8a9cc;
-  --accent-foreground: #2d2838;
+  --accent: #6a5484;
+  --accent-foreground: #ffffff;
 
-  --border: #d6d3cc;
-  --border-subtle: #e0ddd5;
-  --ring: #4f6a5a;
+  --border: #dcd8d2;
+  --border-subtle: #e6e3dd;
+  --ring: #4a6a62;
   --radius: 8px;
 
-  --success: #4f6a5a;
+  --chart-primary: #4a6a62;
+  --chart-accent: #6a5484;
+  --chart-fill: rgba(200, 224, 223, 0.45);
+  --chart-grid: rgba(63, 65, 68, 0.12);
+  --table-header-bg: #e4e1de;
+  --table-border: #dcd8d2;
+
+  --success: #4a6a62;
   --warning: #b08a3e;
   --error: #b5533c;
 }
 
 .dark {
   --background: #181720;
-  --foreground: #e8e6e0;
+  --foreground: #e8e6e8;
 
   --card: #201f2b;
-  --card-foreground: #e8e6e0;
+  --card-foreground: #e8e6e8;
   --card-hover: #262533;
 
   --primary: #7ea68e;
@@ -82,14 +98,23 @@
   --secondary-foreground: #c8c2d6;
 
   --muted: #252333;
-  --muted-foreground: #928fa0;
+  --muted-foreground: #ededee;
+  --muted-subtext: #aba6b8;
 
   --accent: #9b8cb4;
-  --accent-foreground: #e8e6e0;
+  --accent-foreground: #e8e6e8;
 
   --border: #2e2c3a;
   --border-subtle: #26243030;
   --ring: #7ea68e;
+  --radius: 8px;
+
+  --chart-primary: #7ea68e;
+  --chart-accent: #9b8cb4;
+  --chart-fill: rgba(126, 166, 142, 0.16);
+  --chart-grid: rgba(232, 230, 232, 0.08);
+  --table-header-bg: #252333;
+  --table-border: #2e2c3a;
 
   --success: #7ea68e;
   --warning: #d1a860;
@@ -154,11 +179,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-transparent text-foreground font-medium border border-border hover:bg-muted active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-transparent text-foreground font-medium border border-border hover:bg-foreground/10 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background cursor-pointer;
+  }
+
+  .card-hover {
+    @apply hover:bg-card-hover hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 ease-out;
   }
 
   .tag-item {

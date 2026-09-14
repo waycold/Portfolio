@@ -8,7 +8,7 @@ const ProjectCard = ({ project }) => {
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="group text-left rounded-2xl overflow-hidden flex flex-col h-[420px] bg-card border border-border hover:bg-card-hover hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+      className="group text-left rounded-2xl overflow-hidden flex flex-col h-[420px] bg-card border border-border hover:bg-card-hover hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
     >
       <div className="relative h-52 shrink-0 overflow-hidden bg-muted">
         {cover && (

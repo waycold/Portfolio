@@ -85,7 +85,7 @@ const FlowDiagram = ({ nodes, edges }) => {
 
   return (
     <div className="rounded-2xl overflow-hidden bg-muted border border-border">
-      <p className="text-xs font-mono tracking-widest uppercase px-6 pt-6 pb-3 text-muted-foreground">
+      <p className="text-xs font-mono tracking-widest uppercase px-6 pt-6 pb-3 text-muted-subtext">
         System Architecture
       </p>
       <div className="h-[420px] sm:h-[480px] w-full" role="group" aria-label="System architecture flow diagram">

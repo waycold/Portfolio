@@ -61,7 +61,7 @@ const Navbar = () => {
       >
         <Link
           to={linkTo('#home')}
-          className="px-3 py-1.5 text-sm font-medium mr-2 rounded-full text-foreground hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary font-serif"
+          className="px-3 py-1.5 text-sm font-medium mr-2 rounded-full text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary font-serif"
         >
           {cvData.personalInfo.name}
         </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={linkTo(link.href)}
-              className="px-3 py-1.5 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="px-3 py-1.5 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               {link.name}
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={toggleTheme}
-            className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full text-foreground hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
@@ -98,7 +98,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((open) => !open)}
-            className="md:hidden min-w-[44px] min-h-[44px] p-2 flex items-center justify-center rounded-full text-foreground hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="md:hidden min-w-[44px] min-h-[44px] p-2 flex items-center justify-center rounded-full text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="Toggle Navigation Menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-dropdown"
@@ -125,7 +125,7 @@ const Navbar = () => {
                 key={link.name}
                 to={linkTo(link.href)}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block min-h-[44px] flex items-center text-sm font-medium text-foreground hover:bg-muted px-5 transition-colors"
+                className="block min-h-[44px] flex items-center text-sm font-medium text-foreground hover:bg-foreground/10 px-5 transition-colors"
               >
                 {link.name}
               </Link>
